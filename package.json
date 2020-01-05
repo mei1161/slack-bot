@@ -1,0 +1,29 @@
+{
+  "name": "slack-bot",
+  "version": "1.0.0",
+  "description": "",
+  "main": "dist/app.js",
+  "scripts": {
+    "build": "npx babel src -d dist",
+    "start": "node dist/app.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/mei1161/slack-bot.git"
+  },
+  "author": "",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/mei1161/slack-bot/issues"
+  },
+  "homepage": "https://github.com/mei1161/slack-bot#readme",
+  "devDependencies": {
+    "babel-cli": "^6.26.0",
+    "babel-preset-env": "^1.7.0"
+  },
+  "dependencies": {
+    "slackbots": "^1.2.0",
+    "dotenv": "^8.2.0",
+    "fs-extra": "^8.1.0"
+  }
+}
