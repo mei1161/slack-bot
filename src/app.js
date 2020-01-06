@@ -18,6 +18,7 @@ bot.on('start', function() {
   console.log('start bot');
 });
 
+const zoi_list = fs.readJsonSync('./data/zoi.json');
 
 async function message_bot(data){
   let channel = await search_channel_name(data.channel)
@@ -29,6 +30,11 @@ async function message_bot(data){
   }
   else if(data.text === 'できた！'){
     bot.postMessageToChannel(channel,'えらーい');
+  }
+  else if(data.text === '今日も１日'){
+    const image_url = zoi_list[Math.floor(Math.random() * zoi_list.length)];
+    console.log(image_url);
+    bot.postMessageToChannel(channel,image_url);
   }
 }
 
