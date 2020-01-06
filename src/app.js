@@ -2,6 +2,7 @@ import dotenv from 'dotenv';
 import fs from 'fs-extra';
 import SlackBot from 'slackbots';
 
+
 // 設定の読み込み
 if (process.env.NODE_ENV !== 'production') {
   dotenv.config();
@@ -23,7 +24,14 @@ async function message_bot(data){
   if(data.text === 'hello'){
     bot.postMessageToChannel(channel, 'world!');
   }
+  else if(data.text === 'こんにちは'){
+    bot.postMessageToChannel(channel,"こんにちは,まちぞう");
+  }
+  else if(data.text === 'できた！'){
+    bot.postMessageToChannel(channel,'えらーい');
+  }
 }
+
 
 async function search_channel_name(id){
   let channels = await bot.getChannels();
