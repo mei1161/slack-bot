@@ -19,6 +19,7 @@ bot.on('start', function() {
 });
 
 const zoi_list = fs.readJsonSync('./data/zoi.json');
+const omikuji_list = fs.readJsonSync('./data/omikuji.json');
 
 async function message_bot(data){
   let channel = await search_channel_name(data.channel)
@@ -35,6 +36,10 @@ async function message_bot(data){
     const image_url = zoi_list[Math.floor(Math.random() * zoi_list.length)];
     console.log(image_url);
     bot.postMessageToChannel(channel,image_url);
+  }
+  else if(data.text === 'おみくじ'){
+    const omikuji = omikuji_list[Math.floor(Math.random() * omikuji_list.length)];
+    bot.postMessageToChannel(channel,omikuji);
   }
 }
 
